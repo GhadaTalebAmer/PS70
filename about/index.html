@@ -8,8 +8,41 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link href="../style.css" rel="stylesheet">
+
+<style>
+  .navbar {
+  margin-bottom: 2px;
+  background-color: #85B6D8;
+  border: 0;
+  font-size: 11px !important;
+  letter-spacing: 4px;
+  opacity: 0.9;
+}
+</style>
 </head>
-<body>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50>
+
+   <nav class="navbar navbar-default  navbar-fixed-top">
+
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Ghada's PHYSCI 70 Site</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="index.html">Home</a></li>
+      <li><a href="about/index.html">About</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" >Assignments
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="assignments/Final Project Ideas/index.html">Assignment 1</a></li>
+        </ul>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
 
 <div class="jumbotron text-center">
   <h1> About Me </h1> <br></div>
