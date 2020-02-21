@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>PHYSCI 70: Intro to Digital Fabrication </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href="../style.css" rel="stylesheet">
+  <style> 
+
+    .center {
+  display: block;
+  margin-left: 20px;
+  margin-right: auto;
+  width: 20%;
+}
+</style>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h3>Assignment 4: Microcontroller Programming </h3> 
+  <br>     
+      <p> Simple Programs on the Arduino Uno </p>
+
+  </div>
+
+      <br>
+        <div class="container text">
+    <br> 
+    <h3> The Assignment </h3>
+    <p> This week's assignment was to program an Arduino board to do something.    </p>
+      <br>
+      <h3> Initial Problems </h3>
+      <p> This week, I began by encountering various problems. I had issues with installing the Adafruit packages and could not upload anything to my board. After trying out many fixes and not succeeding, I decided to switch from the Itsy Bitsy to using the Arduino Uno board. I had to download extra drivers to communicate with the board and ultimately resolved my problem.   </p>
+      <br>
+        <h3> First Attempts at Programmming the Arduino Uno </h3>
+      <p> Since I've never used a microcontroller before, I tried same basic programming projects for beginners. I outline each of these projects in what follows. </p>
+      <br>
+      
+       <h4> <i> Project 1: Blink an LED</i></h4> 
+      <p> Since I faced issues with downloading the hardware, I decided to retry the assignment from the first weeek of class that involves making an LED blink. To do this, I completed the following steps:
+        <ol>
+          <li> I built a simple circuit by inserting a jumper into GND  pin on the Arduino and then in the GND rail of the breadboard. I then inserted another jumper wire into pin 13 on  the Arduino and then the other end in the breadboard. </li>
+          <li> I placed both the red LED and a 220 Ohm resistor into the breadboard. I placed the long leg of the LED into ground. </li> 
+          <li> I then connected the Arduino Uno to my computer via the USB cable. I found the blink sketch in examples section and uploaded it to my board. </li>
+          <li> The program successfully executed. The red LED on the breadboard turns on for a second and then off for a second and continues in a loop. </li>
+        </ol>
+      </p>
+     <div class="container text-center">
+       <p> <style="text-align:center;"><img src="./blink.jpg" style="width:50%" alt="Block">
+      </div>
+
+        <h4> <i> Project 2: Making an LED blink faster</i></h4> 
+      <p> After making the LED blink, I decided to start playing around with the code to change the blinking speed. To do this, I did the following:
+        <ol>
+          <li> I changed the delay portion of the sketch to 200. This made the LED blink much faster than before. </li> 
+          <li> I then tried to make the LED blink for longer with a shorter stop time in between. To do this, I changed the first delay to (2000) and the second to a (100). This gave me a long red blink followed by a short stop flash.  </li>
+          <li> The program successfully executed. The red LED on the breadboard turns on for a second and then off for a second and continues in a loop. </li>
+        </ol>
+      </p>
+     <div class="container text-center">
+       <p> <style="text-align:center;"><img src="https://giphy.com/gifs/S5F1PTop4XBeBzen8R/html5" style="width:50%" alt="Block">
+      </div>
+      
+      
+  
+  
+</div>
+
+</body>
+</html>
