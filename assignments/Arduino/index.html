@@ -50,21 +50,46 @@
         </ol>
       </p>
         <div class="container text-center">
-       <p> <style="text-align:center;"><img src="./1.gif" style="width:30%" alt="Block">
+       <p> <style="text-align:center;"><img src="./2.gif" style="width:30%" alt="Block">
       </div>
      
         <h4> <i> Project 2: Changing Blink sketch code</i></h4> 
       <p> After making the LED blink, I decided to start playing around with the code to change the blinking speed. To do this, I did the following:
         <ol>
-          <li> I changed the delay portion of the sketch to 200. This made the LED blink much faster than before. </li> 
-          <li> I then tried to make the LED blink for longer with a shorter stop time in between. To do this, I changed the first delay to (2000) and the second to a (100). This gave me a long red blink followed by a short stop flash.  </li>
+          <li> I changed the delay portion of the sketch to 200. This made the LED blink much faster than before. Code as follows: 
+          void loop() {
+          digitalWrite(LED_BUILTIN, HIGH);   
+          delay(200);                       
+          digitalWrite(LED_BUILTIN, LOW);    
+          delay(200);} </li> 
+          <li> I then tried to make the LED blink for longer with a shorter stop time in between. To do this, I changed the first delay to (200) and the second to a (1000). This gave me a long red blink followed by a short stop flash. Code as follows: 
+          void loop() {
+          digitalWrite(LED_BUILTIN, HIGH);   
+          delay(200);                       
+          digitalWrite(LED_BUILTIN, LOW);    
+          delay(1000);} </li> 
           <li> The program successfully executed. The red LED on the breadboard turns on for a second and then off for a second and continues in a loop. See gif beblow. </li>
         </ol>
       </p>
    <div class="container text-center">
-       <p> <style="text-align:center;"><img src="./2.gif" style="width:30%" alt="Block">
+       <p> <style="text-align:center;"><img src="./3.gif" style="width:30%" alt="Block">
       </div>
+ <h4> <i> Project 3: Blink LED with a switch</i></h4> 
+      <p> I decided to use a small pushbutton switch to control an LED. To do this, I created a new circuit with the following steps:
+        <ol>
+          <li> I connected a jumper wire from GND to the breadboard near A13. I then added another jumper wire from this GND rail to H19. I connected another wire from the power on the breadboard to around H26. </li>
+           <li> I connected another jumper wire from pin 2 to around J24. I placed a 10k ohm resistor too between G19 and G23. I then placed the pushbutton switch into F23 and a 220 ohm resistor. </li>
+            <li> I instered the short leg of the blue LED in the GND rail and the long leg around B5. </li>
+             <li> I connected a wire from pin 13 to I5 on the breadboard and another wire from %v to the power rail near A8.
+             I connected the Arduino Uno to my computer and uploaded a sketch to switch the button. The sketch is from the examples folder: file > examples > digital > button. </li>
+             <li>
+              Gif below shows me pressing the pushbutton. Upon pressing it, the circuit breaks and the LED remains off until I let go. 
 
+        </ol>
+      </p>
+   <div class="container text-center">
+       <p> <style="text-align:center;"><img src="./4.gif" style="width:50%" alt="Block">
+      </div>
       
   
   
