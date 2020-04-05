@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>PHYSCI 70: Intro to Digital Fabrication </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href="../style.css" rel="stylesheet">
+  <style> 
+
+    .center {
+  display: block;
+  margin-left: 20px;
+  margin-right: auto;
+  width: 20%;
+}
+</style>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h3>Assignment 9: Networking and Communication </h3> 
+  <br>     
+  </div>
+
+      <br>
+        <div class="container text">
+    <br> 
+    <h3> The Assignment </h3>
+    <p> This week's assignment was to demonstrate two microcontrollers communicating over wired or radio connection. First, I decided to try to recreate the three demo examples posted on the course page. In what follows, I outline my process and show my results for each of the three projects: </p>
+      <br>
+      <h4> <i> Project 1: Communicating with digital I/O </i></h4> 
+      <p> I first built a simple circuit using the following components: an arduino uno, a piezo buzzer, 1 k ohm resistor, a breadboard, and some wires. I connected the components with the following steps:  
+        <ol>
+          <li> Connect the positive side of the buzzer to digital pin 11 on the Arduino Uno. Connect the negative size of the buzzer to one side of the resistor. </li>
+          <li> Connect the other side of the resistor to GND pin on the Arduino.  </li> 
+          <div class="container text-center">
+            <h4> <i> The image below shows the entire complete circuit: </i></h4>
+       <p> <style="text-align:center;"><img src="./1.jpg" style="width:65%" alt="Block">
+      </div>
+          <li> I then connected the Arduino Uno to my computer via the USB cable. I found various codes for songs online and tried different ones out. </li>
+          <li> It is important to note that I assigned pin number to 11 for the buzzer variable if it was different on the source code. </li>
+           <li> I found source codes for the <a href="https://github.com/robsoncouto/arduino-songs/blob/master/silentnight/silentnight.ino"> Silent Night </a> melody and <a href = "https://github.com/robsoncouto/arduino-songs/blob/master/odetojoy/odetojoy.ino"> Beethoven's Ode to Joy </a>. I've linked the Github pages for each source code. </li>
+           <li> I copied the source code into a new sketch on Arduino and uploaded it making sure I assigned the correct pin numbers. </li>
+        </ol>
+      </p>
+        <div class="container text-center">
+           <h4> <i> Below is a video of the buzzer playing the Silent Night melody: </i></h4>
+
+       <p> <style="text-align:center;"><<video width="600" height="440" controls>
+  <source src="1.mp4" type="video/mp4" alt="Block">
+      </div>
+      <h4> <i> Project 2: Police siren using Arduino </i></h4> 
+      <p> After learning how to play basic melodies with the buzzer, I tried to build a police siren mechanism. I wanted to include the flashing lights and the siren sound as you would see on a police car or ambulance. I began by creating the LED circuit. I wanted to have an LED pattern of switching between blue and red flashes to create a realistic police siren. I didn't have red LEDS so I used blue and white instead. I followed the steps below to build the LED components of the circuit.
+        <ol> 
+          <li> I collected the materials I would need. This included: 
+            <ul>
+              <li> 4 LEDS - two white and two blue </li>
+              <li> Breadboard </li>
+              <li> Arduino Uno</li>
+              <li> Some jumper cables </li>
+              <li> 4 220ohm resistors </li>
+            </ul>
+          <li> Next, I began putting the components together. I connected the two white LEDS as follows: connected each negative terminal (shorter end) of the LED with a 220 ohm resistor to the negative rail of the breadboard. I connected these to digital pin 3 and 7 on the Arduino. </li>
+          <li> To connect the blue LEDs, I connected the negative ends also to the negative terminal of the breadboard with a resistor on each negative end. I connected each positive end to pin 10 and 12 of the Arduino. </li>
+        </ol>
+        <p> Next, I wanted to include a buzzer to play the siren tone. To add the buzzer, I connected the positive end to pin 13 on the breadboard and the negative end to the GND rail on the breadboard (which connects to the GND pin on the Arduino). </p> 
+        <div class="container text-center">
+            <h4> <i> The image below shows the entire complete circuit with LEDs and buzzer: </i></h4>
+       <p> <style="text-align:center;"><img src="./2.jpg" style="width:65%" alt="Circuit">
+      </div>
+      <p> With circuit complete, I began writing the code for the siren. I wanted the color pairs of the LEDs to flash separately and repeat in a loop. For the police siren sound, I found some code online of an ambulance siren. I played around with the delay() and tone() functions until the siren sounded more like a police siren. Original source code can be found <a href = "https://github.com/jigneshk5/Siren-Code-Arduino/blob/master/siren.ino"> here </a>. I divided the delay into two parts two control both pairs of LEDS separately.
+        <h4> Complete sketch below: </h4>
+      <pre> 
+        <code>
+  int input=0;
+  int buzz=13; // Buzzer Pin
+  int j=3;
+  int k=12;
+  void setup() {
+  for(int i=3;i<=12;i++)
+  pinMode(i,OUTPUT);
+  pinMode(2,INPUT);
+  }
+
+
+  void settone(int input)
+  {
+
+  if(input==2)
+  loop();
+  }
+
+
+   void loop() {        
+    for(int i=4;i<=12;i+=2)
+  digitalWrite(i,LOW);
+  for(int i=3;i<=11;i+=2)
+  digitalWrite(i,HIGH);
+    for(int hz = 440; hz < 1000; hz++){
+      tone(buzz, hz, 50);
+      delay(4);
+    }
+  for(int i=3;i<=11;i+=2)
+  digitalWrite(i,LOW);
+   for(int i=4;i<=12;i+=2)
+  digitalWrite(i,HIGH);
+    for(int hz = 1000; hz > 440; hz--){
+      tone(buzz, hz, 50);
+      delay(4);
+    }    }
+  </code> </pre> </p>
+<p> I played a round with different delay() values and tones. I settled on a delay of (4) amd a tone of (50) for the closest police siren sound. 
+  <div class="container text-center">
+           <h4> <i> Below is a video of my police siren: </i></h4>
+       <p> <style="text-align:center;"><<video width="700" height="540" controls>
+  <source src="2.mp4" type="video/mp4" alt="Block">
+      </div>
+
+
+
+
+</body>
+</html>
