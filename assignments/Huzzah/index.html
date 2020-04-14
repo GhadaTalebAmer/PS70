@@ -58,68 +58,150 @@
       </div>
 
       <h4> <i> Project 2: Remote Server   </i></h4> 
-      <p> After learning how to play basic melodies with the buzzer, I tried to build a police siren mechanism. I wanted to include the flashing lights and the siren sound as you would see on a police car or ambulance. I began by creating the LED circuit. I wanted to have an LED pattern of switching between blue and red flashes to create a realistic police siren. I didn't have red LEDS so I used blue and white instead. I followed the steps below to build the LED components of the circuit.
+      <p> After learning how to build a web interface to control the ESP32 over a Local Area Network, I decided to try the second tutorial to learn how to talk to the ESP32 remotely. I decided to use Google Firebase for this. In what follows, I outline the steps I took to do this.
         <ol> 
-          <li> I collected the materials I would need. This included: 
-            <ul>
-              <li> 4 LEDS - two white and two blue </li>
-              <li> Breadboard </li>
-              <li> Arduino Uno</li>
-              <li> Some jumper cables </li>
-              <li> 4 220ohm resistors </li>
-            </ul>
-          <li> Next, I began putting the components together. I connected the two white LEDS as follows: connected each negative terminal (shorter end) of the LED with a 220 ohm resistor to the negative rail of the breadboard. I connected these to digital pin 3 and 7 on the Arduino. </li>
-          <li> To connect the blue LEDs, I connected the negative ends also to the negative terminal of the breadboard with a resistor on each negative end. I connected each positive end to pin 10 and 12 of the Arduino. </li>
-        </ol>
-        <p> Next, I wanted to include a buzzer to play the siren tone. To add the buzzer, I connected the positive end to pin 13 on the breadboard and the negative end to the GND rail on the breadboard (which connects to the GND pin on the Arduino). </p> 
-        <div class="container text-center">
-            <h4> <i> The image below shows the entire complete circuit with LEDs and buzzer: </i></h4>
-       <p> <style="text-align:center;"><img src="./2.jpg" style="width:65%" alt="Circuit">
+          <li> First, I created a reactive database on Firebase with the steps detailed on the course page. I created a new project titled ESP32-LED and made sure to record the secret key to give the Huzzah board (jZic7bMDi6Z7IjLvPBnt7yX4WfCPchUaWNXz4Znr) and the auto-generated URL/project address (esp32-led-c8c3b.firebaseio.com). </li>
+          <li> I then used the same circuit as above with LED attached to pin 5. On Arduino's library manager (via Sketch > Include Library > Manage Libraries), I installed the Firebase ESP32 Client and the ArduinoJson library.  </li> 
+          <li> Next, I modified the SimpleWifi Server code from earlier as detailed on the course page. I made sure to change the code chunks to my own ssid, password, firebase host, and firebase authorization key. <b> My modified wifi server code looks like this: </b> </li>
+          <pre>
+            <code>
+              #include <WiFi.h>                                 // esp32 library
+#include <FirebaseESP32.h>                        // firebase library
+
+#define FIREBASE_HOST "esp32-led-c8c3b.firebaseio.com"  // the project name address from firebase id
+#define FIREBASE_AUTH "jZic7bMDi6Z7IjLvPBnt7yX4WfCPchUaWNXz4Znr"                          // the secret key generated from firebase
+#define WIFI_SSID "Banks"                                // input your home or public wifi name
+#define WIFI_PASSWORD "squatter92"                            // password of wifi ssid
+
+String fireString = "";                                          // led status received from firebase
+int ledpin = 5;
+
+//Define FirebaseESP32 data object
+FirebaseData firebaseData;
+
+void setup() {
+  Serial.begin(9600);
+  delay(1000);
+  pinMode(ledpin, OUTPUT);
+  WiFi.begin(WIFI_SSID, WIFI_PASSWORD);                          // try to connect with wifi
+
+  Serial.print("Connecting to ");
+  Serial.print(WIFI_SSID);
+  while (WiFi.status() != WL_CONNECTED) {
+    Serial.print(".");
+    delay(500);
+  }
+
+  Serial.println();
+  Serial.print("Connected to ");
+  Serial.println(WIFI_SSID);
+  Serial.print("IP Address is : ");
+  Serial.println(WiFi.localIP());                                // print local IP address
+  Firebase.begin(FIREBASE_HOST, FIREBASE_AUTH);                  // connect to firebase
+  Firebase.reconnectWiFi(true);
+  Firebase.set(firebaseData, "/LED_STATUS", "OFF");              // set initial string of "OFF"
+}
+
+void loop() {
+
+  Firebase.get(firebaseData, "/LED_STATUS");                     // get led status input from firebase
+  fireString = firebaseData.stringData();                        // change to e.g. intData() or boolData()
+  Serial.println(fireString);
+  
+  if (fireString == "ON") {                    // compare the input of led status received from firebase
+    Serial.println("Led Turned ON");
+    digitalWrite(ledpin, HIGH);                // make output led ON
+  }
+
+  else if (fireString == "OFF") {              // compare the input of led status received from firebase
+    Serial.println("Led Turned OFF");
+    digitalWrite(ledpin, LOW);                 // make output led OFF
+  }
+
+  else {
+    Serial.println("Please send ON/OFF");
+  }
+
+  delay(1000);                                 // not strictly necessary
+}
+            </code></pre>
+
+          <li> I uploaded the code to the Huzzah. I then used the Firebase realtime database console to control the LED by manually switching the LED status between ON and OFF. </li>
+           <div class="container text-center">
+            <h4> <i> The image below is a screenshot of my realtime database console: </i></h4>
+       <p> <style="text-align:center;"><img src="./472.png" style="width:65%" alt="Circuit">
       </div>
-      <p> With circuit complete, I began writing the code for the siren. I wanted the color pairs of the LEDs to flash separately and repeat in a loop. For the police siren sound, I found some code online of an ambulance siren. I played around with the delay() and tone() functions until the siren sounded more like a police siren. Original source code can be found <a href = "https://github.com/jigneshk5/Siren-Code-Arduino/blob/master/siren.ino"> here </a>. I divided the delay into two parts two control both pairs of LEDS separately.
-        <h4> Complete sketch below: </h4>
-      <pre> 
-        <code>
-  int input=0;
-  int buzz=13; // Buzzer Pin
-  int j=3;
-  int k=12;
-  void setup() {
-  for(int i=3;i<=12;i++)
-  pinMode(i,OUTPUT);
-  pinMode(2,INPUT);
+        </ol>
+        <p> Next, I wanted to build a simple web interface to allow for smoother communication with the Huzzah instead of directly changing the inputs on the database console. I followed the below steps to create a new web app with the firebase database added. </p> 
+        <ol>
+          <li> First, I added Firebase to my app via the Web icon (</>).</li>
+          <li>I recorded the auto-generated configuration code that I would later replace into a  modified firebase configuration variable() on a new <a href = "./firebase.html">  html page </a> that would allow me to remotely control the LED on and off. </li> 
+          <li> I integrated the remote LED control features below. Toggling the ON/OFF buttons switches an LED in my room ON/OFF: </li>
+         
+            <code>
+              <!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PHYSCI 70: Introduction to Digital Fabrication</title>
+</head>
+
+<body>
+  <button id="turn-on" name="turnon">Turn On </button>
+  <button id="turn-off" name="turnoff">Turn Off </button>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
+
+  <script>
+  // Your web app's Firebase configuration
+   var firebaseConfig = {
+    apiKey: "AIzaSyAhf_jYb-nWbBrz19d7adUbNiN2f0GNZHY",
+    authDomain: "esp32-led-c8c3b.firebaseapp.com",
+    databaseURL: "https://esp32-led-c8c3b.firebaseio.com",
+    projectId: "esp32-led-c8c3b",
+    storageBucket: "esp32-led-c8c3b.appspot.com",
+    messagingSenderId: "675815403011",
+    appId: "1:675815403011:web:9884d393a8b99104a1a836",
+    measurementId: "G-V71LJ367WM"
+  };
+  
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  // Get a database reference to our blog
+  var ref = firebase.database().ref("/");
+
+  // make the buttons call the function below 
+  document.getElementById('turn-on').addEventListener('click', turnOn, false);
+  document.getElementById('turn-off').addEventListener('click', turnOff, false);
+
+  function turnOn(){
+    console.log("turning on");
+    ref.update({
+      "LED_STATUS": "ON"
+    });
   }
 
+  function turnOff(){
+    console.log("turning off");
+    ref.update({
+      "LED_STATUS": "OFF"
+    });
+  } 
+    </script>
 
-  void settone(int input)
-  {
-
-  if(input==2)
-  loop();
-  }
-
-
-   void loop() {        
-    for(int i=4;i<=12;i+=2)
-  digitalWrite(i,LOW);
-  for(int i=3;i<=11;i+=2)
-  digitalWrite(i,HIGH);
-    for(int hz = 440; hz < 1000; hz++){
-      tone(buzz, hz, 50);
-      delay(4);
-    }
-  for(int i=3;i<=11;i+=2)
-  digitalWrite(i,LOW);
-   for(int i=4;i<=12;i+=2)
-  digitalWrite(i,HIGH);
-    for(int hz = 1000; hz > 440; hz--){
-      tone(buzz, hz, 50);
-      delay(4);
-    }    }
-  </code> </pre> </p>
-<p> I played a round with different delay() values and tones. I settled on a delay of (4) amd a tone of (50) for the closest police siren sound. 
+</body>
+            </code>
+        
+      
   <div class="container text-center">
-           <h4> <i> Below is a video of my police siren: </i></h4>
+           <h4> <i> Below is a video of me using my remote web interface to communicate with the Huzzah via my phone.  </i></h4>
        <p> <style="text-align:center;"><<video width="700" height="540" controls>
   <source src="2.mp4" type="video/mp4" alt="Block">
       </div>
