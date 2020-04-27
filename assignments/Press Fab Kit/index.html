@@ -130,8 +130,83 @@
     <h3> The Assignment </h3>
     <p> This week's assignment was to create a press fit construction kit using a laser cutter. I have never used a laser cutter before so this was all a new learning experience for me. I decided to focus more on the design aspect of this assignment as I had also never used a CAD software before. For this course, I will be using a web-based CAD software called Onshape. I had issues downloading and connecting to other sofwtare such as Fusion360 and found that Onshape had all the functionalities I would possibly need for this class. I began by completing the tutorial design project detailed on the course page. Below is an outline of this process.  </p>
       <br>
-      \
-      <br>
+      <h4> <i> Sample component design </i></h4> 
+      <p> I first began by sketching a sample component in order to become more familiar with the functionalities of Onshape. I carried out the following steps in order to create a simple 3D press-fit component. 
+        <ol>
+          <li> First, I changed the document units to mm. I then created a new sketch on the top plane. I drew a corner point square of 40mm x 40mm. I offsetted the rectangular boundary by 10mm to create a smaller inner square of 20mm x 20mm.  </li>
+          <li> I created vertical and horizontal construction lines across the midpoints of the outer rectangular boundary. I offsetted these by 1.5mm to factor in the width of the hypothetical material I may use. I then mirrored these offsetted lines against the original midpoint lines.  </li> 
+          <div class="container text-center">
+            <h4> <i> The image below shows the entire complete sketch with the dimensions I chose: </i></h4>
+       <p> <style="text-align:center;"><img src="./Sketch.png" style="width:80%" alt="Press fab component sketch ">
+      </div>
+      <li> After completing the 2D sketch of the simple component, I extruded the design to create a 3D representation to create the notches for other pieces to fit into.  I chose the extrude function and then selected all the boundary areas that I wanted to include in the extruded shape. </li>
+        <li> I set the thickness of the extruded shape to 3mm as a stand-in for the thickness of the material. </li>
+        <div class="container text-center">
+            <h4> <i> The image below shows the extruded shape from a rotated side view:  </i></h4>
+       <p> <style="text-align:center;"><img src="./Extrude.png" style="width:80%" alt="Extrude sketch ">
+      </div>
+      <li> For the last step, I filleted the outer edges of each notch to make it easier to align the pieces together. I used the fillet feature and selected a rounded edge with a radius of 3mm and applied it to all 8 corners of the notches. </li>
+      <div class="container text-center">
+            <h4> <i> The image below shows the final design of the component from a top plane view with final dimensions: </i></h4>
+       <p> <style="text-align:center;"><img src="./Sketch2.png" style="width:60%" alt="Extrude top plane sketch ">
+      </div>
+      <p> I then played around with assembling multiple components to see if the dimensions I used worked. I assembled four components by rotating them and fitting them into each other via the notches. </p>
+        <div class="container text-center">
+            <h4> <i> The images below shows the assembly of multiple duplicate components:  </i></h4>
+       <p> <style="text-align:center;"><img src="./3d1.png" style="width:60%" alt="assembly ">
+        <br>
+          <p> <style="text-align:center;"><img src="./3d2.png" style="width:60%" alt="assembly ">
+      </div>
+
+    </ol>
+<br>
+      <h4> <i>  Decorative Ornament Construction Kit </i></h4> 
+      <p> For this assignment, I wanted to create a construction kit for decorative ornaments to be used indoors. These would be small spheres that can be placed on trees (e.g. christmas ornaments), hung with string from walls/ceilings or just placed in bowl. These would be laser cut on carboard or MDF then painted with different colors and designs. Below I outline the steps for creating my CAD model of this ornament kit. 
+        <ol>
+          <li> First, I sketched out what base pieces I would need to design to create a sphere. I realized I would need two main pieces: an arc shape that would extend the radius of the sphere and a joint piece to connect the arcs. See simple sketch below. </li>
+            <div class="container text-center">
+            <h4> <i> Initial paper sketch of sphere pieces: </i></h4>
+       <p> <style="text-align:center;"><img src="./sketchsphere.jpg" style="width:50%" alt="Press fab  sketch ">
+      </div>
+          <li> Then, I began designing the two components I would need. I used similar dimensions to the piece I created above. For the joint piece, I began with a 20mm x 20mm square. I then divided the square using vertical and perpendicular lines to create smaller boxes of 4mm x 4mm which will later be extruded to create the notches.   </li> 
+          <div class="container text-center">
+            <h4> <i> Sketch of joint piece </i></h4>
+       <p> <style="text-align:center;"><img src="./1.png" style="width:40%" alt="Press fab component sketch ">
+      </div>
+      <li> Then, I created the arc piece. I sketched a three-point arc of a 35mm radius and a width of 10mm. I created boxes on each edge of 4mm by 4mm at the midpoint to later be extruded for notches.</li>
+      <div class="container text-center">
+            <h4> <i> Sketch of arc piece </i></h4>
+       <p> <style="text-align:center;"><img src="./2.png" style="width:40%" alt="Press fab component sketch ">
+      </div>
+      <li> After both pieces were sketched, I extruded them to create 3D representations. I used placeholder width of 3mm for the extrusion.</li>
+      <div class="container text-center">
+            <h4> <i> Extruded ornament components: </i></h4>
+       <p> <style="text-align:center;"><img src="./4.png" style="width:40%" alt="Press fab component sketch ">
+      </div>
+      <li> For visualization purposes, I assembled the pieces together in the form of the sphere. I needed 6 joint pieces and 8 arc pieces. I used placeholder colors of red and blue for aesthetic purposes. I rotated the pieces to fit together four arcs on each notch of a joint. I did this twice to create two half spheres. I joined these halves with four joint pieces to form a complete sphere. </li>
+       <div class="container text-center">
+            <h4> <i> Extruded ornament components: </i></h4>
+       <p> <style="text-align:center;"><img src="./5.png" style="width:50%" alt="Press fab component sketch ">
+      </div>
+       <div class="container text-center">
+            <h4> <i> Extruded ornament components: </i></h4>
+       <p> <style="text-align:center;"><img src="./6.png" style="width:50%" alt="Press fab component sketch ">
+      </div>
+      <li> Below is a pdf file drawing of all components required to create one sphere (to scale). This will then be sent to a laser cutter to create a sphere from materials such as carboard, MDF or thin plywood and finished off with a painted design.  </li>
+
+       <div class="container text-center">
+            <h4> <i> Pdf file drawing of all components for one ornament: </i></h4>
+       <p> <style="text-align:center;"><img src="./drawing1.pdf" style="width:80%" alt="Press fab component sketch ">
+      </div>
+      <h4> The relevant files are available below for download: 
+        <p>
+      <ul> <li> <a href="./drawing1.pdf" download> Final drawing of all pieces for one ornmanet (pdf) </li> 
+      <li> <a href="./part1.sldprt" download> Sketch of two pieces (joint and arc) part studio export (Solidworks format) </li> 
+          <li> <a href="./Assembly2.x_t" download> Sphere assembly export (Parasolid format) </li> 
+
+      </h4>
+
+
 
     
 
