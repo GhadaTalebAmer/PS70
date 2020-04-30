@@ -56,73 +56,7 @@
 </nav>
 
 <div class="jumbotron text-center">
-  <h3> Inkscape and Fusion360 </h3> 
-  <br>     
-      <p> Summary of Week 2 </p>
-
-  </div>
-
-      <br>
-        <div class="container text">
-    <br> 
-    <h3> Introduction to 2D Design </h3>
-    <p> This week, I tried to learn different procedures in Inkscape. The following details some of the new skills I learned with examples of work produced. </p>
-      <br>
-      <br>
-       <h4> <b> Converting a bitmap picture into a vector format </b></h4>
-      <p> I began by trying the example on the site. I followed the steps to trace the bitmap of the paddle sketch picture into a vector. I played around with the features in the dialog box to see how the picture would change. I changed the line color to red as shown below. </p>
-      
-    </div>
-<div class="container text">   
-       <h5> Steps followed: </h5>   
-       <ol> 
-        <li> Import bitmap of paddle sketch into Inkspace sheet </li>
-        <li> Traced bitmap with edge detection </li>
-        <li> Deleted the bitmap, left me with vectors (looks like outline of the image) </li>
-        <li> Change style with fill = no colour and stroke = red </li>
-        <li> Broke apart the paths and removed the extra lines by deleting them </li>
-        <li> Kept simplifying the path until smooth </li>
-        <li> Exported the image as a png to add to my website </li>
-</div
-<br> 
-    <div class="container text-center"> 
-      <h4> <i> Paddle Bitmap Picture to Vector </i></h4>
-      <p> <style="text-align:center;"><img src="./sample.png" style="width:30%" alt="Paddle Sketch"></p>
-    </div>
-
-       <div class="container text">
-    <p> I then tried coverting some other pictures from google into vector formats. I first converted them to bitmaps and then repeated the above steps to trace the outlines of each picture and create vectors. Below are pictures of the bitmaps and the corresponding vectors. </p>
-      <br>
-
-       <div class="container text-center"> 
-      <h4> <i> Flower Pictures to Vector Formats </i></h4>
-      <p> <style="text-align:center;"><img src="./pic.png" style="width:30%" alt="Flower Bitmaps"></p>
-    </div>
-      <br>
-        <h4> <b> Using GIMP for processing a photograph for vinyl cutting </b></h4>
-      <p> I imported an image of my friend and I into GIMP. Under color menu, I chose threshold option. Adjusted it to get the color I wanted. I applied the blur Gaussian filter. Then, I applied threshold again to make the borders sharper and get the level of detail I wanted. I ended up with a black-and-white png for vinyl-cutting.</p>
-
-      <div class="container text-center"> 
-      <h4> <i> My image that I turned into a B&W png to vinyl-cut  </i></h4>
-      <p> <style="text-align:center;"><img src="./gimp2.png" style="width:40%" alt="Pic"></p> 
-      </div>
-
-      <div class="container text">   
-       <h3> Next Steps </h3>   
-       <ol> 
-        <li> Continue working on site and fix page layout </li>
-        <li> Make sure all page links work on nav bar </li>
-        <li> Fix Arduino download errors </li>
-        <li> Try making Blink program work </li>
-        <li> Build more complex circuits </li>
-  </div
-
-<div class="jumbotron text-center">
-  
-
-  </div>
-<div class="jumbotron text-center">
-  <h3>Assignment 3: Making a Kinetic Sculpture </h3> 
+  <h3>  Assignment 3: Making a Kinetic Sculpture </h3> 
   <br>     
       <p> Mechanical Puppet </p>
 
@@ -166,10 +100,80 @@
         <div class="container text-center"> 
          <p> <style="text-align:center;"><img src="./pieces.jpg" style="width:40%" alt="Motor"></p>
        </div>
-
       <p> I began by drilling a hole in the largest sphere (which would be the head of the puppet) through which I could attach a rod that would be connected to the top wooden block. I did this by securing the sphere in a clamp and using a hand drill with a drill bit equal to the diameter of the rod. </p>
+      <br>
+      <br> 
 
+ <h3> 3D Model of Mechanical Puppet</h3> 
+      <p> Instead of finishing up the construction of the puppet, I decided to create a 3D model of what the finished product would look like since I had no access to a lab. Below I outline the steps to create a model of my puppet using Onshape. 
+        <ol>
+          <li> First, I began by sketching a 120mm x 120mm square on the top plane. This will become the wall mount piece. Then, I drew a center point circle of 12mm in diameter that would become the rod attachment to secure the puppet to the wall mount. </li>
+          <div class="container text-center">
+            <h4> <i> Initial square and center-point circle sketch: </i></h4>
+            <p> <style="text-align:center;"><img src="./1.png" style="width:20%" alt="Press fab component sketch ">
     </div>
+    <li> Next, I used the thicken function to transform the base square to a 3D representation. I made the thickness of the square to 120mm to create a cube. I used the extrude function to transform the initial circle sketch into a rod part with 230mm in height.</li>
+    <div class="container text-center">
+            <h4> <i> Extruded rod and wall mount parts: </i></h4>
+            <p> <style="text-align:center;"><img src="./2.png" style="width:20%" alt="Press fab component sketch ">
+    </div>
+    <li> Having created the base pieces, I began creating the puppet that would be attached to the rod. I began by creating a sphere to form the head of the puppet. I sketched a circle of 20mm radius with a vertical line at the center. I used the trim function to cut half the circle to create a semi-circle. </li>
+    <li> I then used the revolve function to revolve the semi-circle around the vertical line axis to create a sphere.  </li> 
+          <div class="container text-center">
+            <h4> <i> The image below shows the semi-circle sketch transformed into a sphere: </i></h4> 
+            <p> <style="text-align:center;"><img src="./3.png" style="width:20%" alt="Press fab component sketch ">
+               <p> <style="text-align:center;"><img src="./4.png" style="width:20%" alt="Press fab component sketch ">
+    </div>
+    <li> For the body of the puppet, I drew two lines of 77mm to create an open triangle. For the top of the triangle, I drew a curved line to connect the ends. I then extruded the shape with a diameter of 30mm to create a 3d representation of the body.
+      <div class="container text-center">
+            <h4> <i> Triangular sketch for puppet body: </i></h4> 
+            <p> <style="text-align:center;"><img src="./5.png" style="width:20%" alt="Press fab component sketch ">
+    </div>
+    <li> Next, I used a fillet feature to round the edges with a radius of 5mm. I created holes at the top-center of each side face of the body part to resemble sockets for where the arm parts will be placed. Using the hole function, I created two simple holes of 20mm in depth and 10mm in width that would intersect at the center. </li>
+      <div class="container text-center">
+            <h4> <i> Extruded body part with arm sockets: </i></h4> 
+            <p> <style="text-align:center;"><img src="./6.png" style="width:20%" alt="Press fab component sketch ">
+               <p> <style="text-align:center;"><img src="./7.png" style="width:20%" alt="Press fab component sketch ">
+    </div>
+    <li> For the hands, I repeated the sphere step to create two spheres of 10mm in diameter. For the arm pieces, I created two thin pipe parts 20mm in length. </li>
+    <div class="container text-center">
+        <h4> <i> Hand parts </i></h4> 
+            <p> <style="text-align:center;"><img src="./8.png" style="width:20%" alt="Press fab component sketch ">
+    </div>
+    <li> I created a DC motor part that will be affixed in the wall mount. To do this, I drew a 20mm diameter circle with another 2mm diameter circle in the center. I extruded the larger circle to create a cylinder of 25mm in length. I then, extruded the top circle of 12mm to create the shaft component of the motor. I used the dimensions of a typical DC motor. </li>
+    <div class="container text-center">
+        <h4> <i> DC motor part: </i></h4> 
+            <p> <style="text-align:center;"><img src="./9.png" style="width:20%" alt="Press fab component sketch ">
+    </div>
+     <li> I created the disc that will be attached to the shaft of the motor that will spin. I drew and extruded a circle of 70mm in diameter and a center hole of 3mm. </li>
+     <div class="container text-center">
+        <h4> <i> Rotating disc: </i></h4> 
+            <p> <style="text-align:center;"><img src="./10.png" style="width:20%" alt="Press fab component sketch ">
+    </div>
+     <li> I used the spline function to draw parts that resembled the strings that would affix the arms of the puppet to the disc. I extruded two 12mm cylinders from the disc part that would be used to attach the strings. I extruded the sketches to create what would resemble a string of 1mm. </li>
+     <div class="container text-center">
+        <h4> <i> String puppet connector: </i></h4> 
+            <p> <style="text-align:center;"><img src="./11.png" style="width:20%" alt="Press fab component sketch ">
+    </div>
+     <li>Having created all the parts, I assembled them together. See images below for final assembly of finished product. The DC motor, when connected to a power source, would rotate the disc. The arms of the puppet are joined together in the triangular shaped hole. This means they would rotate in the same direction. So, both hands affixed to the disc via string would essentially rotate clockwise in the same direction as the disc spins. </li>
+<div class="container text-center">
+        <h4> <i> Assembly of puppet: </i></h4> 
+            <p> <style="text-align:center;"><img src="./a.png" style="width:40%" alt="Press fab component sketch ">
+              <br>
+              <p> <style="text-align:center;"><img src="./b.png" style="width:40%" alt="Press fab component sketch ">
+                <br>
+                <p> <style="text-align:center;"><img src="./c.png" style="width:40%" alt="Press fab component sketch ">
+                  <br>
+                  <p> <style="text-align:center;"><img src="./d.png" style="width:40%" alt="Press fab component sketch ">
+                    <br>
+                    <p> <style="text-align:center;"><img src="./e.png" style="width:40%" alt="Press fab component sketch ">
+                      <br>
+                      <p> <style="text-align:center;"><img src="./f.png" style="width:40%" alt="Press fab component sketch ">
+    </div>
+
+    <h4> The relevant files are available below for download: 
+        <p>
+      <ul> <li> <a href="./Assembly 2.x_t" download> Assembly of all pieces of finished product in Solidworks format </li> 
 
       
   
