@@ -23,37 +23,126 @@
 <div class="jumbotron text-center">
   <h3>Assignment 5: 3D Printing </h3> 
   <br>     
-      <p> - </p>
+      <p> Redbull Can Adapter and Coronavirus Face Mask </p>
 
   </div>
 
       <br>
         <div class="container text">
     <br> 
-    <h3> The Assignment </h3>
-    <p> This week's assignment was to create a press fit construction kit using a laser cutter. I have never used a laser cutter before so this was all a new learning experience for me. So, I decided to stick to cutting out a simple design from corrugated cardboard (designed on Fusion360) using the laser cutter. Below is an outline of my process.  </p>
+    <h3> Completing a CAD tutorial for a 3D printed object </h3>
+    <p> This week's assignment was to first find a CAD software tutorial and follow it to create a simple 3D model. Since I am using Onshape for this course, I found a <a href = "https://www.youtube.com/watch?v=KHmjRvU_nP0&list=PLTCCNNvHC8PAcpgeMC1IIa0xEzrHO_9r0&index=3"> tutorial </a> posted by Maker's Muse on Youtube for designing and 3D printing a Redbull drink holder that would be placed in a car seat. Since redbull cans are typically smaller than average cans, they do not fit nicely in a typical car's drink holder and tend to flop around. So, some form of can adapter, that would fit into a car's drink holder, is required to hold the smaller cans in place. Below is an outline of my process for designing a creating an adapter for smaller cans.</p>
+    <ol>
+          <li> First, I needed the dimensions of a typical car's drink holder and a redbull can. I used the measurements that were used in the tutorial. Using Onshape, I created a sketch on the side plane of the side part that would later be revolved around an axis to create an open cylindrical shape.  sketched out what base pieces I would need to design to create a sphere. This shape tapers a bit (i.e. is thicker arond the top than the bottom) in order to account for shape of the car's holder. I first used the line function to randomly draw the shape required (looks like an odd L shape). I then used the dimension tool to change my shape into the dimensions used in the tutorial. See image of sketch with dimensions below. I then locked the 2d sketch to the origin using the coincident tool. </li>
+            <div class="container text-center">
+            <h4> <i> Initial side part </i></h4>
+       <p> <style="text-align:center;"><img src="./3.png" style="width:50%" alt="Press fab  sketch ">
+      </div>
+          <li> Next, I used the revolve tool to turn the cutaway sketch into a cylindrical shape. I defined the face of the sketch to be revolved and selected the bottom right vertical line as the revolve axis to create the part. Using these few steps, I created the can adapter. See model of final product below.</li>
+            <div class="container text-center">
+            <h4> <i> Transparent 3D model of Redbull can adapter with initial 2D sketch  </i></h4>
+       <p> <style="text-align:center;"><img src="./4.png" style="width:50%" alt="Press fab  sketch ">
+      </div>
+      <div class="container text-center">
+            <h4> <i> Different views of the final model   </i></h4>
+       <p> <style="text-align:center;"><img src="./1.png" style="width:50%" alt="Press fab  sketch ">
+        <p> <style="text-align:center;"><img src="./2.png" style="width:50%" alt="Press fab  sketch ">
+      </div>
+      <li> After exporting my part, I imported the STL file into the PrusaSlicer program. After the slicing was finished, I exported the g-code and recorded the sliced info. I made note of the estimated printing time of the my can adapter: 4hr and 39mins.</li>
+            <div class="container text-center">
+            <h4> <i> Sliced 3D Model with sliced information</i></h4>
+       <p> <style="text-align:center;"><img src="./5.png" style="width:70%" alt="Press fab  sketch ">
+      </div>
+=
       <br>
-      <h3> The Problem </h3>
-      <p> - </p>
-      <br>
-      <h3> Initial Solution </h3>
-      <p> - </p>
-      <br>
-      <br>
-      <h4> <i> The Initial Cardboad Prototype Cube </i></h4>
+         <h4> The relevant files are available below for download: 
+        <p>
+      <ul> <li> <a href="./Part Studio 1.stl" download> STL file of can adapter model </a></li> 
+        <li> <a href="./Part Studio 1.gcode" download> G-Code file of sliced model </a> </li> 
+      
+</ul>
+      </h4>
 
-      <p> <style="text-align:center;"><img src="./cube.JPG" style="width:50%" alt="Cube"></p>
-      <br>
-
-      <h3> Design </h3>
-      <p>  - </p>
+<h3> Designing my own 3D printed object: Coronavirus face mask  </h3>
+    <p> The second task for this week was to design and print a small object that would be difficult to make using subtractive methods. Given the current circumstances as a result of COVID-19, I decided to create a 3D model of a face mask that could be 3D printed to combat shortages of such personal protective equipment. The advantages of making masks through 3D printing are many. Theoretically, individuals with single 3D printing devices would be able to make a large quantity of masks in their own home relatively easily and cheaply. In situations such as a pandemic, 3D printers could help offset shortages in safety gear by allowing people, with access to a model like the one I made, make home-made protective equipment. Below is an outline of my process for designing and creating model of a face mask that would be then sliced and 3D printed. The measurements used here would create are approximate and suitable for my facial features. </p>
+    <ol>
+      <li> First, I began with a basic rectangular sketch on the top plane with dimensions of 50mm wide and 125mm high. I then made all four sides of the rectangle to be construction lines that I would use as guides to design the mask shape in 2D. I then sketched two lines: one 45mm extending up from the bottom right vertex and the other of 30mm going down from the top right vertex. At the ends of both these lines, I sketched two horizontal lines going in (25mm wide).   </li>
+            <div class="container text-center">
+            <h4> <i> Construction guidelines for mask sketch </i></h4>
+       <p> <style="text-align:center;"><img src="./a.png" style="width:50%" alt="Press fab  sketch ">
+      </div>
+        <li> Next, I used the spline to draw a curved line that resembles the shape of one half of a mask (the other half would be a mirror of this shape). I adjusted the spline points where necessary to make the shape look more like a mask that would fit comfortably over my face. I mirrored this half across the left vertical side of the initial rectangle.</li>
+            <div class="container text-center">
+            <h4> <i> Initial sketch of mask shape in 2D </i></h4>
+       <p> <style="text-align:center;"><img src="./b.png" style="width:50%" alt="Press fab  sketch ">
+      </div>
+    <li> Then, I created a second plane above the top plane to design the base shape of the mask. To do this, I created an offset plane coming off of the base sketch by 60mm. This resembles the width of the mask that could be changed for different face sizes. On this offset plane, I sketched a center-point circle that would become the mouthpiece of the mask. I drew a circle straight down from the origin with 60mm in diameter. </li>
+            <div class="container text-center">
+            <h4> <i> Offset plane with sketch for mouthpiece </i></h4>
+       <p> <style="text-align:center;"><img src="./e.png" style="width:50%" alt="Press fab  sketch ">
+      </div>
+ <li> To connect sketches on both planes together, I used the spline tool. I drew a spline from the bottom sketch to connect it to the top circle and used the pierce tool and tangent tool to make sure the line connects to the circle. I did this on both the top and bottom ends of the base sketch. </li>
+            <div class="container text-center">
+            <h4> <i> Connecting base sketch to mouthpiece sketch </i></h4>
+       <p> <style="text-align:center;"><img src="./i.png" style="width:50%" alt="Press fab  sketch ">
         <br>
+        <p> <style="text-align:center;"><img src="./j.png" style="width:50%" alt="Press fab  sketch ">
+      </div>
+      <li> Next, I created a new plane going down through the center of the top circle. I drew a construction line from the top of the circle to the bottom of the circle. Then, I created a point normal plane from the line and bottom edge. With this new plane, I sketched the side view of the mask. I drew another spline to connect the top and bottom edges of the circle to the base sketch. With this, I have a complete outline of what the mask is going to look like.  </li>
+ <div class="container text-center">
+            <h4> <i> Connecting base sketch to mouthpiece sketch </i></h4>
+       <p> <style="text-align:center;"><img src="./k.png" style="width:50%" alt="Press fab  sketch ">
+      </div>
+      <li>I use the loft command to transform the 2D mask sketch into a 3D representation. I made sure to add the guidelines I created to the loft command. </li>
+ <div class="container text-center">
+            <h4> <i> Loft command for basic 3D shape </i></h4>
+       <p> <style="text-align:center;"><img src="./l.png" style="width:50%" alt="Press fab  sketch ">
+      </div>
+   <li>To create the mouthpiece and a place for a filter, I used the extrude command to remove the inner circle and push it 8mm down. I hollowed out the inner part of the mask using the shell command to create a shell thickness of 1.5mm. </li>
+ <div class="container text-center">
+            <h4> <i> Mouthpiece, filter and hollowed inner shell </i></h4>
+       <p> <style="text-align:center;"><img src="./m.png" style="width:30%" alt="Press fab  sketch ">
+       <p> <style="text-align:center;"><img src="./n.png" style="width:30%" alt="Press fab  sketch ">
+      </div>
+   <li> To make breathing holes in the mouthpiece, I sketched a pattern of circles of 5mm in diameter. I then used the extrude tool to remove the spaces. I extruded this face by 6mm to create a new mouthpiece part.  </li>
+ <div class="container text-center">
+            <h4> <i> Mouthpiece extrude </i></h4>
+       <p> <style="text-align:center;"><img src="./p.png" style="width:50%" alt="Press fab  sketch ">
+      </div>
+         <li> I changed the appearance of both parts to a white and red palette. I then wanted to make the bottom part of the shape curved to fit more comfortably on my face. I drew a basic sketch on the side plane of a three-point arc. I then extruded this out symmetrically to round the inner part of the mask.  </li>
+ <div class="container text-center">
+            <h4> <i> Curved inner part </i></h4>
+       <p> <style="text-align:center;"><img src="./q.png" style="width:50%" alt="Press fab  sketch ">
+      </div>
+          <li> I then added two slots that would be the holes of the head bands. I then extruded these symmetrically to create slots of 4mm wide on both sides of the mask.   </li>
+ <div class="container text-center">
+            <h4> <i> Slots for mask band </i></h4>
+       <p> <style="text-align:center;"><img src="./r.png" style="width:50%" alt="Press fab  sketch ">
         <br>
-        <h4> <i> Initial Sketch </i></h4>
-      <p> <style="text-align:center;"><img src="./sketch.jpg" style="width:60%" alt="Sketch"></p>
-      <br>
+         <p> <style="text-align:center;"><img src="./r copy.png" style="width:50%" alt="Press fab  sketch ">
+      </div>
+<br> <h4> Final model of coronavirus face mask </h4> 
+ <div class="container text-center">
+       <p> <style="text-align:center;"><img src="./11.png" style="width:30%" alt="Press fab  sketch ">
+        <p> <style="text-align:center;"><img src="./12.png" style="width:30%" alt="Press fab  sketch ">
+          <p> <style="text-align:center;"><img src="./13.png" style="width:30%" alt="Press fab  sketch ">
+            <p> <style="text-align:center;"><img src="./14.png" style="width:30%" alt="Press fab  sketch ">
+     <br>
+   </div> 
+     <li> I imported the final model into PrusaSlicer. Estimated printing time of one mask is 4hr and 23mins.  </li>
 
-    
+ <div class="container text-center">
+            <h4> <i> Sliced mask model </i></h4>
+       <p> <style="text-align:center;"><img src="./15.png" style="width:70%" alt="Press fab  sketch ">
+      </div>
+         <h4> The relevant files are available below for download: 
+        <p>
+      <ul> <li> <a href="./Part Studio 2.stl" download> STL file of 3D mask model </li> 
+        <li> <a href="./Part Studio 2.gcode" download> G-Code file of sliced mask model ready for 3D printing </li> 
+      
+
+      </h4>
+
 
       
   
