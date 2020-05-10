@@ -21,7 +21,8 @@
 <body>
 
 <div class="jumbotron text-center">
-  <h3>Assignment 10: Wireless Networking </h3> 
+  <h3>Assignment 10: Wireless Communication </h3> 
+  <p> LAN Server and Remove Server</p>
   <br>     
   </div>
 
@@ -29,7 +30,7 @@
         <div class="container text">
     <br> 
     <h3> The Assignment </h3>
-    <p> This week's assignment was to demonstrate communication between a microcontroller and another device over Bluetooth or WiFi connection. I was interested in learning all the different things I could do with the Huzzah microcontroller so I decided to try out all the tutorials on the class page. Below I outline my progress with each of the four projects. I first began by configuring Arduino IDE to work with the Huzzah. So I downloaded  the relevant drivers and boards. In the following projects, I'll be working with the Adafruit ESP32 Feather.  </p>
+    <p> This week's assignment was to demonstrate communication between a microcontroller and another device over Bluetooth or WiFi connection. I was interested in learning all the different things I could do with the Huzzah microcontroller so I decided to try out  the tutorials on the class page that I would likely use for my ifnal project: local and remote servers. Below I outline my progress with each of the twp projects. I first began by configuring Arduino IDE to work with the Huzzah. So I downloaded  the relevant drivers and boards. In the following projects, I'll be working with the Adafruit ESP32 Feather.  </p>
       <br>
       <h4> <i> Project 1: Local Area Network Server </i></h4> 
       <p> In this project, I created the simple Wifi server to blink an LED on and off wirelessly. To do this, I connected the long end of an LED to output pin SCK/pin 5 on the Huzzah attached to a breadboard. I connected a wire from GND pin on the Huzzah to negative rail of the breadboard. I connective short end of the LED to the GND rail on breadboard. To communicuate with the LED wirelessly, I did the following:
@@ -47,12 +48,12 @@
            <li>On the page loaded, I pressed the links to turn the LED on and off as shown in video below. </li>
       <div class="container text-center">
             <h4> <i> The image below shows a screenshot of the Serial Monitor window: </i></h4>
-       <p> <style="text-align:center;"><img src="./473.png" style="width:65%" alt="Huzzah circuit">
+       <p> <style="text-align:center;"><img src="./472.png" style="width:65%" alt="Huzzah circuit">
       </div>
       </p>
         <div class="container text-center">
            <h4> <i> Below is a video of the web browser and LED blinking as I toggle between on and off buttons: </i></h4>
-       <p> <style="text-align:center;"><<video width="900" height="640" controls>
+       <p> <style="text-align:center;"><video width="900" height="640" controls>
   <source src="474.mp4" type="video/mp4" alt="Huzzah blink"></video>
      </p>
       </div>
@@ -129,7 +130,7 @@ void loop() {
           <li> I uploaded the code to the Huzzah. I then used the Firebase realtime database console to control the LED by manually switching the LED status between ON and OFF. </li>
            <div class="container text-center">
             <h4> <i> The image below is a screenshot of my realtime database console: </i></h4>
-       <p> <style="text-align:center;"><img src="./472.png" style="width:65%" alt="Circuit">
+       <p> <style="text-align:center;"><img src="./473.png" style="width:65%" alt="Circuit">
       </div>
         </ol>
         <p> Next, I wanted to build a simple web interface to allow for smoother communication with the Huzzah instead of directly changing the inputs on the database console. I followed the below steps to create a new web app with the firebase database added. </p> 
@@ -202,13 +203,10 @@ void loop() {
       
   <div class="container text-center">
            <h4> <i> Below is a video of me using my remote web interface to communicate with the Huzzah via my phone.  </i></h4>
-       <p> <style="text-align:center;"><<video width="700" height="540" controls>
+       <p> <style="text-align:center;"><video width="700" height="540" controls>
   <source src="476.mp4" type="video/mp4" alt="Block">
       </div>
-       <h4> <i> Project 3: HTTP Server </i></h4> 
-      <p> In this project, I created the simple Wifi server to blink an LED on and off wirelessly. To do this, I connected the long end of an LED to output pin SCK/pin 5 on the Huzzah attached to a breadboard. I connected a wire from GND pin on the Huzzah to negative rail of the breadboard. I connective short end of the LED to the GND rail on breadboard. To communicuate with the LED wirelessly, I did the following:
-        <ol>
-          <li> I uploaded an example sketch from File
+  
 
 
 

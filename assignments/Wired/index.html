@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>PHYSCI 70: Intro to Digital Fabrication </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href="../style.css" rel="stylesheet">
+  <style> 
+
+    .center {
+  display: block;
+  margin-left: 20px;
+  margin-right: auto;
+  width: 20%;
+}
+</style>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h3>Assignment 9: Wired Communication </h3> 
+  <p> Serial Communication using UART</p>
+  <br>     
+  </div>
+
+      <br>
+        <div class="container text">
+    <br> 
+    <h3> Arduino Serial Communication using UART </h3>
+    <p> This week's assignment was to demonstrate two microcontrollers communicating over wired or radio connection. I wanted to try serial communication between an Arduino and PC to turn an LED on and OFF via the serial monitor. This is because controlling LEDs is an important component of my final project. So, I wanted to learn how to control them both via the computer and also via a remote server (assignment 10). Below is an outline of my process: </p>
+    <ol>
+          <li> First, I wanted to learn how to work with Arduino Uno's UART Pins Tx/Rx to control an LED. This is a simple project that requires an LED connection and a sketch. The circuit consists of connecting the positive end to digital pin 13 and the negative end to GND.   </li>
+            <div class="container text-center">
+            <h4> <i> Image of simple LED circuit </i></h4>
+       <p> <style="text-align:center;"><img src="./A.jpg" style="width:50%" alt="Press fab  sketch ">
+      </div>
+       <li> Next, I wrote a simple program using the digitalWrite() and serial.println() functions that would allow me to send 0 or 1 from the serial monitor to turn the LED OFF or ON. See code below:   </li>
+            <div class="container text-center">
+            <h4> <i> Sample code to communicate with Arduino from computer to turn LED ON/OFF (copy and paste into Arduino IDE): </i></h4>
+       <p> <pre> <code> int led = 13;
+
+int  value = 0;
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+  pinMode(led, OUTPUT);
+  
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+ 
+  if(Serial.available()>0){
+    value = Serial.read();
+    delay(5); 
+  }
+  if(value == '1'){
+    digitalWrite(led, HIGH);
+    Serial.println("LED is ON");
+  }
+   if(value == '0'){
+    digitalWrite(led, LOW);
+    Serial.println("LED is OFF");
+}
+}</code> </pre></p>
+      </div>
+        <li> After uploading the code to the Arduino, I opened a new serial monitor window. Sending 0 to the Arduino turns the LED OFF and prints the message "LED is OFF" while sending 1 turns the LED ON and prints the message "LED is ON".    </li>
+            <div class="container text-center">
+            <h4> <i> Demonstration of controlling LED via computer:  </i></h4>
+      <div class="container text-center">
+       <p> <style="text-align:center;"><video width="700" height="550" controls>
+  <source src="B.mp4" type="video/mp4" alt="Block">
+      </div>
+       <div class="container text-center">
+            <h4> <i> Screen recording of sending signals from serial monitor to Arduino:  </i></h4>
+          </div>
+      <div class="container text-center">
+       <p> <style="text-align:center;"><video width="800" height="440" controls>
+  <source src="serialmon.mp4" type="video/mp4" alt="Block">
+      </div>
+</br>
+</div>
+    <div class="container text: left">
+      <h4> The relevant files are available below for download: 
+      <ul> <li> <a href="./UAR_LED.ino" download> UART LED control sketch </a></li> </div>
+
+     
+
+
+      
+
+
+
+</body>
+</html>
