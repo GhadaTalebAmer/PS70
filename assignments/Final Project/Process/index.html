@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/line-icons.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <link href="../style.css" rel="stylesheet">
@@ -15,19 +16,80 @@
   margin-left: 20px;
   margin-right: auto;
   width: 20%;
-}
+
+
 </style>
 </head>
-<body>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="50>
+ <nav class="navbar navbar-default  navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Ghada's PHYSCI 70 Site</a>
+    </div>
+    <style> p {font-size: 16px;} </style>
+    <ul class="nav navbar-nav">
+      <li><a href="../../index.html">Home</a></li>
+      <li><a href="../../about/about.html"">About</a></li>
+      <li><a href="../../assignments/assignments.html">Assignments</a></li>
+      <li><a href="../../assignments/Final Project/index.html">Final Project</a></li>
+    </ul>
+  </div>
+</nav>
 
 <div class="jumbotron text-center">
-  <h3> Final Project Development Process </h3> 
-  <br>     
+  <h2> Final Project Development Process:</h2> 
+  <style> h3 {color: #2b8cbe;} </style> 
+  <h3> Crisis Communication Device and Database </h3>
+  <br>
+</div>
+<div class = "container text">
+  <h2> Why this project? </h2>
+  <p> After returning to Jordan, I was concerned by how the government had been handling the COVID-19 outbreak at home, particularly their communication strategies. Growing up in Jordan, I was used to the sound of <a href = "   https://www.youtube.com/watch?v=UETJfANTfBY"> air raid sirens </a> that sounded throughout the country via a national alarm system that was controlled by the Department of Civil Defense. These air raid sirens were used to announce a national curfew in the event of threats of terrorist acts. We came to learn what the various signals or broadcasts by public officials meant. Currently, Each day, this national  emergency siren system is being used to announce ban on movement, lift stay-at-home orders, begin national curfews or alert the public as to when they could go purchase their essential needs. The system is technologically obsolete, it does not cover the entire country and the wailing sounds are triggering. My project is an attempt to produce an alternative means of national emergency communication.    
+  <h2> What are the problems with the existing solution?</h2> 
+  <ol>
+    <li><p> The public siren system was implemented in 1982 and has not changed much. A <a href = "https://www.researchgate.net/publication/250147162_Early_Warning_Systems_for_Disasters_in_Jordan_Current_and_Future_Trends"> study </a> on Early Warning Systems for Disasters in Jordan describes it as "an achievement in its time" but now, the technology is "obsolete."</p></li>
+    <li><p>The system does not cover the entire country. Only three cities - Amman, Zarqa and Irbid - have decent coverage while other cities are completely out of signal reach. </p></li>
+    <li><p>The air raid sirens are triggering. They remind the public of wartime or incidents of threats to public safety.</p></li>
+    <li><p>The sirens sound at least twice each day (starting at 7am). They are <a href = " https://www.youtube.com/watch?v=Z34_zTrawqI"> loud, muffled and unpleasant.</a> People have <a href = "https://www.cnn.com/2020/03/25/middleeast/jordan-lockdown-coronavirus-intl/index.html"> complained </a> about the sounds that "blared at 7am." </p>
+    <li><p> Public officials make statements via loud speakers. These statements change each day. People have <a href = "https://www.cnn.com/2020/03/25/middleeast/jordan-lockdown-coronavirus-intl/index.html" > reported concern </a> over the mixed messaging and lack of clarity. </p></li> 
+    <li><p> Althought the public learned the meanings of siren tones over time, they do not convey much information or are they clear to those unfamiliar with them. </p></li>
+    <li><p> Different tools are used to communicate messages to the public in Jordan which includes TV, radio broadcasts, SMS notifications and posts online. There is no cohesion between the messages sent via each platform. Many people do not have access to these platforms. Thus, the existence of these different technologies, with no centralization, creates a lot of confusion and mixed-messaging.</p></li>
+  </ol> 
+
+  <h2> What is the proposed solution? </h2> 
+  <p> Any proposed solution to the identified problems with Jordan's national siren system should have the following characteristics: 
+    <ul>
+      <li><p> Low cost</p></li>
+       <li><p> Centralized messaging </p></li>
+        <li><p> Rapid response </p></li>
+         <li><p> High/total coverage </p></li>
+          <li><p> Clear signals/sirens/tones </p></li>
+           <li><p> Multiple types of signals </p></li>
+           <li><p> Remote operation </p></li>
+    </ul>
+    <h3> The Initial Concept: Remote Database and In-Home Device </h3>
+    <p> My proposed solution consists of a two-part crisis communication tool: an in-home device and a central database. The database is controlled/administered by the governmental authority responsible for such crisis communication. Each individual/household receives a small, portable in-home device. The remote database communicates with all in-home devices at the same time to deliver various signals. The device will also have other emergency-related functionalities such as an SOS call button and two-way communication. This tool meets all the necessary characteristics of a solution to tackle the identified problems with the existing system.
+
+  <h2> What materials and components will be required? </h2>
+  <h3> Hardware </h3>
+  <p> To create a single device, I used the following materials. I included an estimate of the total cost of each hardware item, its dimensions and, where available, links to purchase the item from Adafruit. 
+  <ul> 
+    <li> <p> <a href= "https://www.adafruit.com/product/3405" > Adafruit HUZZAH32 – ESP32 Feather Board </a> ($20.00)(51mm x 23mm x 7mm) </li>
+    <li> <p> <a href= "https://www.adafruit.com/product/1890" > Mini Metal Speaker with Wires - 8 ohm 0.5W </a> ($1.95) (38mm) </li>
+    <li> <p> <a href= "https://www.adafruit.com/product/160" > Active Piezo Buzzer </a> ($1.50) (12mm) </li>
+    <li> <p> <a href= "https://www.adafruit.com/product/1009" > Round Tactile Button Switch </a> ($0.40) (12mm x 12mm) </li>
+    <li> <p> <a href= "https://www.adafruit.com/product/4204" > Three Ultrabright LEDS with 10mm diffused, color-tinted lenses </a> ($1.00) (10mm) </li>
+    <li> <p> <a href= "https://www.adafruit.com/product/1959" > USB Battery Pack - 5V Output </a> ($15.00)(25mm x 91mm x 25mm) </li>
+    <li> <p> <a href= "https://www.adafruit.com/product/64" > Half-Size Breadboard </a> ($5.00)(55mm x 85mm) </li>
+      <li> <p> <a href= "https://www.adafruit.com/product/64" > HOUSING?? </a> ($5.00)(55mm x 85mm) </li>
+
+  </ul>
+   <p> <b>Estimated cost of a single device: </b> $X <p>
   </div>
 
       <br>
         <div class="container text">
-    <
+    
 
 
 
