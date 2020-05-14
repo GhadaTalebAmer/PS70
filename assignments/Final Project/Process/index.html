@@ -80,6 +80,8 @@
       <li><p> Two warning lights to signal when the ban on movement begins or ends</p></li>
        <li><p> An alert indicating a "seek out more information" message  </p></li>
         <li><p> An SOS/help button that will alert emergency personnel</p></li>
+        <li> <p> An all-clear signal </p> </li>
+    <li> <p> A shelter-in-place alert </p> </li>
          <li><p> Wifi connectivity </p></li>
          <li><p> Built-in power source </p></li>
   </ol>
@@ -123,29 +125,66 @@
 <p> After returning to Jordan, I could not purchase the required electronic components. So, I had to make do with what I had. Thus, my prototype is merely a demonstration of some of the functionalities described above. The device consists of two parts: the housing and the electronic circuit. In what follows, I show how I created prototypes of each part.
 
 <h3> Part 1: Circuit and Electronic Components</h3>
+
 <p> Add images + final component list</p>
+
+<p> Given that I had limited access to electronic components, I built a fairly simple circuit to demonstrate some of the desired functionalities of the device. My curcuit consists of three output devices (10mm R, G, B LEDs) and a 10uF capacitor. Each of the LEDs is connected to GND and a digital pin on the  HUZZAH32 – ESP32 Feather Board. I used the capacitor between RST and GND pins to stop the Huzzah from bootloading automatically (which prevented me from uploading my sketch). Once the sketch has been uploaded to the Arduino,  the circuit will be powered via a USB 5V battery pack. </p> 
+
 <div class="container text-center">
-            <h3> <i> Model of Circuit Assembly (using Tinkercad)</i></h3>
-       <p> <style="text-align:center;"><img src="./Circuit.jpg" style="width:75%" alt="Drawing">
+        <h3> <i> Model of Circuit Assembly (using Tinkercad)</i></h3>
+       <p> <style="text-align:center;"><img src="./Circuit.jpg" style="width:75%" alt="Circuit Model">
+         <br>
+         <p> <i> Note: An Arduino Uno was used in the illustration. However, my project requires a Huzzah microcontroller. </i> </p>   
        </div>
 
+<div class="container text-center">
+       <h3> <i> Image of Assembled Circuit </i></h3>
+       <p> <style="text-align:center;"><img src="./Circuit.jpg" style="width:75%" alt="Circuit Assembly">
+       </div>
+       
 <h3> Part 2: Housing </h3>
 <p> With limited supplies available, I created the housing from materials I found at home. I used a small plastic storage container as my base. For aestheitic purposes, I used black acrylic paint to paint the inside of the housing. I finished it with a matte medium acrylic finish.
 
 <br>
 <h2> How will the database be developed? </h2> 
+
 <p> I created </p>
 <p> Add code </p>
       
        <div class="container text: left">
+
+<p> My final integrated database was developed via two stages. First, I built remote server using Firebase. Next, I created a personal webpage to make it easier and clearer to communicate with the device.</p> 
+<h3> Part 1: Realtime Database </h3>  
+<p> To communicate with the circuit , I created a remote server using Google Firebase. This 3rd party platform acts as a general-purpose database for my IoT project. A Realtime Database enables me to talk remotely with the device(s) from anywhere in the world. To do this, I created a new public Realtime database that communicated with the Arduino IDE to control the circuit I built. Find my public database <a href = "crisis-communication-device.firebaseio.com" > here. </a> </p> 
+<div class="container text-center">
+<h3> <i> Crisis Communication Database Firebase Console </i></h3>
+ <p> <style="text-align:center;"><img src="./Circuit.jpg" style="width:75%" alt="Circuit Assembly">
+       </div>
+ <p> In my Arduino IDE, I created a simple sketch using the <a href = "https://github.com/mobizt/Firebase-ESP32"> Firebase-ESP32 library </a> and some digitalWrite() functions to receive the (input) (status of each LED from firebase) and produce an output (turn LED ON/OFF or blink). I created only one LED_STATUS field since I would be ceating my own user interface. This field consists of 6 possible inputs: turn green LED ON/OFF, turn red LED ON/OFF, blink blue LED, stop blue LED blinking. More fields will be added as I integrate more output devices into the circuit. </p>
+         <p> Add sketch </p>
+         
+<h3> Part 2: Personal Webpage </h3>  
+<p> Having created the firebase database that one could use to manually change the input field, I wanted to create a smoother UI. I designed a simple webpage consisting of a grid of 2 rows x 3 columns. Each box in the grid is a container that houses one of the possible signals/alerts. For each container, I added two buttons (ON/OFF) that would remotely change the input status and control my LEDs. This UI is very user-friendly and consists of simple line icons, descriptions and clear buttons that are easy to use. As I integrate more output devices in my circuit and create new fields, I can add new containers to my webpage for easy user control. Find my database <a href = "https://ghadatalebamer.github.io/PS70/assignments/Final%20Project/Product/database/index.html"> here </a>.</p>
+      <div class="container text-center">
+<h3> <i> Crisis Communication Database User Interface </i></h3>
+ <p> <style="text-align:center;"><img src="./Circuit.jpg" style="width:75%" alt="Circuit Assembly">
+       </div>
+         
+         <div class="container text: left">
       <h3> The relevant files are available below for download:  </h3>
       <ul> 
         <li><p> <a href="./Drawing.pdf" download> Annotated CAD Drawing of Crisis Communication Device with Dimensions (PDF)</p></a></li> 
         <li><p> <a href="./Housing.stl" download> 3D CAD Model of Housing (STL)</p></a></li>
         <li><p> <a href="./Electronic_Components.stl" download> 3D CAD Model of Electronic Components: Mini Speaker, Piezo Buzzer, LEDs, Button Switch (STL)</p></a></li> 
-        <li><p> <a href="./Complete_Device.stl" download> 3D CAD Model of Device with Electronic Components (STL)</p></a></li> 
+        <li><p> <a href="./Complete_Device.stl" download> 3D CAD Model of Device with Electronic Components (STL)</p></a></li>
+         <li> <p> <a href = "" > HTML file to create personal database UI </a> </p> </li>
+          <li> <p> <a href = "" > HTML file to create personal database UI </a> </p> </li>
+         
 
       </div>
+
+
+
    
 
 
