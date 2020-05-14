@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="Bootstrap, Landing page, Template, Registration, Landing">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="author" content="Grayrids">
+    <title>Integrated Crisis Communication Database</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/line-icons.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/owl.theme.css">
+    <link rel="stylesheet" href="css/nivo-lightbox.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/menu_sideslide.css">
+    <link rel="stylesheet" href="css/main.css">    
+    <link rel="stylesheet" href="css/responsive.css">
+
+  </head>
+  <style> h3 {color: #e74c3c;} </style>
+  <body>
+    <!-- Header Section Start -->
+    <header id="slider-area">  
+      <nav class="navbar navbar-expand-md fixed-top scrolling-navbar bg-white">
+        <div class="container">
+          <h3 class="navbar-brand" href="index.html"><span class="lni-signal"></span>Integrated Crisis Communication Database</h3>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="lni-menu"></i>
+          </button>
+        
+        </div>
+      </nav> 
+    </header>
+    <!-- Header Section End --> 
+
+    <!-- Services Section Start -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-header">          
+          <h2 class="section-title"> Choose Alert:</h2>
+          <span>Signals</span>
+          <p class="section-subtitle"> Select type of signal to send to at-home devices</p>
+        </div>
+
+        <div class="row">
+      <div class="col-lg-4 col-md-6 col-xs-12">
+            <div class="item-boxes services-item wow fadeInDown" data-wow-delay="0.4s">
+              <div class="icon color-1">
+                <i class="lni-warning"></i>
+              </div>
+              <h4> Stay-at-Home Begins </h4>
+              <p> Red Warning Light</p>
+  <button id="turn-on-r" name="turnon"> ON </button>
+  <button id="turn-off-r" name="turnoff"> OFF </button>
+</div>
+</div>
+          <div class="col-lg-4 col-md-6 col-xs-12">
+            <div class="item-boxes services-item wow fadeInDown" data-wow-delay="0.2s">
+              <div class="icon color-2">
+                <i class="lni-check-mark-circle"></i>
+              </div>
+              <h4> Stay-at-Home Ends</h4>
+              <p> Green Warning Light </p>
+  <button id="turn-on" name="turnon"> ON </button>
+  <button id="turn-off" name="turnoff"> OFF </button>
+</div>
+</div>
+          
+          <div class="col-lg-4 col-md-6 col-xs-12">
+            <div class="item-boxes services-item wow fadeInDown" data-wow-delay="0.6s">
+              <div class="icon color-3">
+                <i class="lni-information"></i>
+              </div>
+              <h4>Seek Out More Information</h4>
+              <p> Blinking Blue Light</p>
+  <button id="turn-on-blink" name="turnon"> ON </button>
+  <button id="turn-off-blink" name="turnoff"> OFF </button>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-xs-12">
+            <div class="item-boxes services-item wow fadeInDown" data-wow-delay="0.8s">
+              <div class="icon color-4">
+                <i class="lni-layers"></i>
+              </div>
+              <h4>UI/UX Design</h4>
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-xs-12">
+            <div class="item-boxes services-item wow fadeInDown" data-wow-delay="1s">
+              <div class="icon color-5">
+                <i class="lni-tab"></i>
+              </div>
+              <h4>App Development</h4>
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut.</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-xs-12">
+            <div class="item-boxes services-item wow fadeInDown" data-wow-delay="1.2s">
+              <div class="icon color-6">
+                <i class="lni-briefcase"></i>
+              </div>
+              <h4>Digital Marketing</h4>
+              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
+
+  <script>
+
+  var firebaseConfig = {<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-app.js"></script>
+
+
+<script src="https://www.gstatic.com/firebasejs/7.14.3/firebase-analytics.js"></script>
+
+<script>
+  var firebaseConfig = {
+    apiKey: "AIzaSyCuBqUhIT1eLR9XBt5RGQIy3jLwrMtkhvI",
+    authDomain: "crisis-communication-device.firebaseapp.com",
+    databaseURL: "https://crisis-communication-device.firebaseio.com",
+    projectId: "crisis-communication-device",
+    storageBucket: "crisis-communication-device.appspot.com",
+    messagingSenderId: "636004453312",
+    appId: "1:636004453312:web:272ff2dffc56587e2e1625",
+    measurementId: "G-77NTZBVHF9"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+
+  var ref = firebase.database().ref("/");
+
+
+  document.getElementById('turn-on').addEventListener('click', greenOn, false);
+  document.getElementById('turn-off').addEventListener('click', greenOff, false);
+
+  function greenOn(){
+    console.log("turning on");
+    ref.update({
+      "LED_STATUS": "ON_green"
+    });
+  }
+
+  function greenOff(){
+    console.log("turning off");
+    ref.update({
+      "LED_STATUS": "OFF_green"
+    });
+}
+document.getElementById('turn-on-r').addEventListener('click', redOn, false);
+document.getElementById('turn-off-r').addEventListener('click', redOff, false);
+    function redOn(){
+    console.log("turning on red");
+    ref.update({
+      "LED_STATUS": "ON_red"
+    });
+  }
+
+  function redOff(){
+    console.log("turning off red");
+    ref.update({
+      "LED_STATUS": "OFF_red"
+    });
+  } 
+  document.getElementById('turn-on-blink').addEventListener('click', blueOn, false);
+document.getElementById('turn-off-blink').addEventListener('click', blueOff, false);
+   
+    function blueOn(){
+    console.log("blinking blue");
+    ref.update({
+      "LED_STATUS": "ON_blue"
+    });
+  }
+
+  function blueOff(){
+    console.log("blinking blue off");
+    ref.update({
+      "LED_STATUS": "OFF_blue"
+    });
+  } 
+  
+    </script>
+
+</body>
+          
+    <!-- Start Video promo Section -->
+    <section class="video-promo section">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-sm-12">
+              <div class="video-promo-content text-center">
+                <a href="https://www.youtube.com/embed/LSgBpbgTlhw" class="video-popup"><i class="lni-film-play"></i></a>
+                <h2 class="wow zoomIn" data-wow-duration="1000ms" data-wow-delay="100ms">Our Introductory Video</h2>
+                <p class="wow zoomIn" data-wow-duration="1000ms" data-wow-delay="100ms">Learn more about us, its only 30mins</p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Video Promo Section -->
+
+    
+    <!-- jQuery first, then Tether, then Bootstrap JS. -->
+    <script src="js/jquery-min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/color-switcher.js"></script>
+    <script src="js/jquery.mixitup.js"></script>
+    <script src="js/nivo-lightbox.js"></script>
+    <script src="js/owl.carousel.js"></script>    
+    <script src="js/jquery.stellar.min.js"></script>    
+    <script src="js/jquery.nav.js"></script>    
+    <script src="js/scrolling-nav.js"></script>    
+    <script src="js/jquery.easing.min.js"></script>     
+    <script src="js/wow.js"></script> 
+    <script src="js/jquery.vide.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>    
+    <script src="js/jquery.magnific-popup.min.js"></script>    
+    <script src="js/waypoints.min.js"></script>    
+    <script src="js/form-validator.min.js"></script>
+    <script src="js/contact-form-script.js"></script>   
+    <script src="js/main.js"></script>
+    
+  </body>
+</html>
