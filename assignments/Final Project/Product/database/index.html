@@ -106,8 +106,8 @@
               <h4> All-Clear </h4>
               <p> Flashing Red, Green and Blue Lights</p>
               <br>
-  <button id="turn-on-blink" name="turnon"> ON </button>
-  <button id="turn-off-blink" name="turnoff"> OFF </button>
+  <button id="turn-on-all" name="turnon"> ON </button>
+  <button id="turn-off-all" name="turnoff"> OFF </button>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 col-xs-12">
@@ -204,7 +204,23 @@ document.getElementById('turn-off-blink').addEventListener('click', blueOff, fal
       "LED_STATUS": "OFF_blue"
     });
   } 
+
+  document.getElementById('turn-on-all').addEventListener('click', allOn, false);
+document.getElementById('turn-off-all').addEventListener('click', allOff, false);
+    function allOn(){
+    console.log("turning on all");
+    ref.update({
+      "LED_STATUS": "all"
+    });
+  }
   
+  function allOff(){
+    console.log("turning off all");
+    ref.update({
+      "LED_STATUS": "all_off"
+    });
+  }
+
     </script>
 
 </body>
