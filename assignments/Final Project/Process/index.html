@@ -146,11 +146,7 @@
 <p> With limited supplies available, I created the housing from materials I found at home. I used a small plastic storage container as my base. For aestheitic purposes, I used black acrylic paint to paint the inside of the housing. I finished it with a matte medium acrylic finish.
 
 <br>
-<h2> How will the database be developed? </h2> 
-
-<p> I created </p>
-<p> Add code </p>
-      
+<h2> How will the database be developed? </h2>       
        <div class="container text: left">
 
 <p> My final integrated database was developed via two stages. First, I built remote server using Firebase. Next, I created a personal webpage to make it easier and clearer to communicate with the device.</p> 
@@ -158,7 +154,7 @@
 <p> To communicate with the circuit , I created a remote server using Google Firebase. This 3rd party platform acts as a general-purpose database for my IoT project. A Realtime Database enables me to talk remotely with the device(s) from anywhere in the world. To do this, I created a new public Realtime database that communicated with the Arduino IDE to control the circuit I built. Find my public database <a href = "crisis-communication-device.firebaseio.com" > here. </a> </p> 
 <div class="container text-center">
 <h3> <i> Crisis Communication Database Firebase Console </i></h3>
- <p> <style="text-align:center;"><img src="./Circuit.jpg" style="width:75%" alt="Circuit Assembly">
+ <p> <style="text-align:center;"><img src="./Console.png" style="width:75%" alt="Console ">
        </div>
  <p> In my Arduino IDE, I created a simple sketch using the <a href = "https://github.com/mobizt/Firebase-ESP32"> Firebase-ESP32 library </a> and some digitalWrite() functions to receive the (input) (status of each LED from firebase) and produce an output (turn LED ON/OFF or blink). I created only one LED_STATUS field since I would be ceating my own user interface. This field consists of 6 possible inputs: turn green LED ON/OFF, turn red LED ON/OFF, blink blue LED, stop blue LED blinking. More fields will be added as I integrate more output devices into the circuit. </p>
          <p> Add sketch </p>
@@ -167,7 +163,7 @@
 <p> Having created the firebase database that one could use to manually change the input field, I wanted to create a smoother UI. I designed a simple webpage consisting of a grid of 2 rows x 3 columns. Each box in the grid is a container that houses one of the possible signals/alerts. For each container, I added two buttons (ON/OFF) that would remotely change the input status and control my LEDs. This UI is very user-friendly and consists of simple line icons, descriptions and clear buttons that are easy to use. As I integrate more output devices in my circuit and create new fields, I can add new containers to my webpage for easy user control. Find my database <a href = "https://ghadatalebamer.github.io/PS70/assignments/Final%20Project/Product/database/index.html"> here </a>.</p>
       <div class="container text-center">
 <h3> <i> Crisis Communication Database User Interface </i></h3>
- <p> <style="text-align:center;"><img src="./Circuit.jpg" style="width:75%" alt="Circuit Assembly">
+ <p> <style="text-align:center;"><img src="./UI.png" style="width:80%" alt="Circuit Assembly">
        </div>
          
          <div class="container text: left">
@@ -177,8 +173,7 @@
         <li><p> <a href="./Housing.stl" download> 3D CAD Model of Housing (STL)</p></a></li>
         <li><p> <a href="./Electronic_Components.stl" download> 3D CAD Model of Electronic Components: Mini Speaker, Piezo Buzzer, LEDs, Button Switch (STL)</p></a></li> 
         <li><p> <a href="./Complete_Device.stl" download> 3D CAD Model of Device with Electronic Components (STL)</p></a></li>
-         <li> <p> <a href = "" > HTML file to create personal database UI </a> </p> </li>
-          <li> <p> <a href = "" > HTML file to create personal database UI </a> </p> </li>
+          <li> <p> <a href = "../Product/index.html"download> HTML file to create personal database UI (HTML) </a> </p> </li>
          
 
       </div>
